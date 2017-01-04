@@ -1,4 +1,4 @@
-import sys, random
+import sys, random, time
 
 tictactoeBoard = {'top-L': ' ', 'top-M': ' ', 'top-R' :' ',
                   'mid-L': ' ', 'mid-M': ' ', 'mid-R' :' ',
@@ -53,7 +53,7 @@ def check4WinningCombo(board, m):
         return True
     if winningCombo(board, m, 'top-M', 'mid-M', 'low-M'):
         return True
-    if winningCombo(board, m, 'top-R', 'mid-M', 'low-R'):
+    if winningCombo(board, m, 'top-R', 'mid-R', 'low-R'):
         return True
 
 def computersTurn(board, m):
@@ -144,9 +144,11 @@ while True:
                     continue
             if check4WinningCombo(tictactoeBoard, move):
                 print('Human wins the game. Game ends here.')
+                time.sleep(5)
                 sys.exit()
             if turnsMaxedOut(tictactoeBoard):
                 print ('Nobody won the game. Game ends here.')
+                time.sleep(5)
                 sys.exit()
             else:
                 move = 'O'
@@ -156,6 +158,7 @@ while True:
                 printBoard(tictactoeBoard)
                 if check4WinningCombo(tictactoeBoard, move):
                     print('The computer wins the game. Game ends here.')
+                    time.sleep(5)
                     sys.exit()
         
     if move == 'O':
@@ -168,9 +171,11 @@ while True:
             printBoard(tictactoeBoard)
             if check4WinningCombo(tictactoeBoard, move):
                     print('The computer wins the game. Game ends here.')
+                    time.sleep(5)
                     sys.exit()
             if turnsMaxedOut(tictactoeBoard):
                 print ('Nobody won the game. Game ends here.')
+                time.sleep(5)
                 sys.exit()
             else:
                 print('It is now your turn. Pick a space.')
@@ -186,10 +191,12 @@ while True:
                         continue
                 if check4WinningCombo(tictactoeBoard, move):
                     print('The computer wins the game. Game ends here.')
+                    time.sleep(5)
                     sys.exit()           
 
     if move == '':
         print ('You chose to quit the game.')
+        time.sleep(3)
         sys.exit()
 
     else:
