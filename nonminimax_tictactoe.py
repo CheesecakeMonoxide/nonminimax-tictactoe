@@ -11,6 +11,21 @@ def printBoard(board):
     print ('---------------')
     print ('| ' + board['low-L'] + ' || ' + board['low-M'] + ' || ' + board['low-R'] + ' |')
 
+def instruc():
+    welcomemsg = ('  Welcome! Try to beat the tictactoe machine if you can!  ')
+    print(welcomemsg.center(60, '#'))
+    print('')
+    print('IMPORTANT INSTRUCTION:')
+    print('Take note of the following moves you should type when the game prompts you to input a space.')
+    print('')
+    print('|top-L||top-M||top-R|')
+    print('---------------------')
+    print('|mid-L||mid-M||mid-R|')
+    print('---------------------')
+    print('|low-L||low-M||low-R|')
+    print('')
+    print('')
+    
 def spaceIsValid(board, s):
     if s in board.keys():
         return True
@@ -102,6 +117,7 @@ def turnsMaxedOut(board):
             return False
     return True
             
+instruc()
 printBoard(tictactoeBoard)
 
 print ('Human, pick X or O, or none to end game.')
@@ -123,7 +139,7 @@ while True:
                     printBoard(tictactoeBoard)
                     break
                 else:
-                    print('Either the space you entered is not valid or it is already taken. Pick again.')
+                    print('Either the space you entered is not valid or it is already taken. See instructions above and pick again.')
                     space = input()
                     continue
             if check4WinningCombo(tictactoeBoard, move):
@@ -166,7 +182,7 @@ while True:
                         printBoard(tictactoeBoard)
                         break
                     else:
-                        print('Either the space you entered is not valid or it is already taken. Pick again.')
+                        print('Either the space you entered is not valid or it is already taken. See instructions above and pick again.')
                         continue
                 if check4WinningCombo(tictactoeBoard, move):
                     print('The computer wins the game. Game ends here.')
