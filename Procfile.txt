@@ -1,1 +1,1 @@
-web: python nonminimax_tictactoe.py
+echo "web: python app.py" > Procfile
