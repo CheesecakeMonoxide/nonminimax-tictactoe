@@ -1,0 +1,1 @@
+web: python nonminimax_tictactoe.py
